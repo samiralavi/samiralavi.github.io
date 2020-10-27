@@ -20,3 +20,7 @@ markdown_extensions:
 plugins:
   - search # necessary for search to work
   - awesome-pages
+
+google_analytics:
+  - G-P667J8JT16
+  - auto
