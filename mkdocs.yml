@@ -1,0 +1,22 @@
+site_name: Seyed Amir Alavi
+site_author: Seyed Amir Alavi
+site_url: https://samiralavi.github.io/
+theme:
+  name: material
+  icon:
+    logo: material/contacts
+  favicon: images/favicon.png
+  palette:
+    primary: light green
+    accent: light green
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/samiralavi
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/seyed-amir-alavi/
+markdown_extensions:
+  - attr_list
+plugins:
+  - search # necessary for search to work
+  - awesome-pages
