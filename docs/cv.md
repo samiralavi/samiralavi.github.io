@@ -6,4 +6,4 @@ You can view the latest version of my CV at the following link:
 
 Also, the the PDF copy is available here:
 
-[Seyed Amir Alavi CV, PDF (last updated at May 2020)](https://drive.google.com/open?id=1GHHv3xNukqjLzZRUCH7F7BHBZWiQ8L1q)
+[Seyed Amir Alavi CV, PDF (last updated at October 2020)](downloads/SeyedAmirAlavi_CV_Oct_2020.pdf)
