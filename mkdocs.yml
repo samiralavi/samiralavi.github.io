@@ -24,13 +24,16 @@ plugins:
   - search # necessary for search to work
 
 nav:
-  - index.md
-  - cv.md
-  - activities.md
-  - interests.md
-  - publications.md
-  - teaching.md
-  - contact.md
+  - Website:
+    - index.md
+    - cv.md
+    - activities.md
+    - interests.md
+    - publications.md
+    - teaching.md
+    - contact.md
+  - Blog:
+    - cv.md
 
 google_analytics:
   - UA-181389079-1
