@@ -7,8 +7,10 @@ theme:
     logo: material/contacts
   favicon: images/favicon.png
   palette:
-    primary: light green
-    accent: light green
+    primary: purple
+    accent: deep orange
+  features:
+    - navigation.instant
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -19,7 +21,15 @@ markdown_extensions:
   - attr_list
 plugins:
   - search # necessary for search to work
-  - awesome-pages
+
+nav:
+  - index.md
+  - cv.md
+  - activities.md
+  - interests.md
+  - publications.md
+  - teaching.md
+  - contact.md
 
 google_analytics:
   - UA-181389079-1
