@@ -32,7 +32,7 @@ nav:
   - teaching.md
   - contact.md
   - Blog:
-    - blog/blog.md
+    - blog/c4_embedded.md
 
 google_analytics:
   - UA-181389079-1
