@@ -32,7 +32,7 @@ nav:
   - teaching.md
   - contact.md
   - Blog:
-    - blog/buck_converter_arduino.md
+    - blog/buck_coverter/buck_converter_arduino.md
 
 google_analytics:
   - UA-181389079-1
