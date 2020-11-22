@@ -32,7 +32,7 @@ nav:
   - teaching.md
   - contact.md
   - Blog:
-    - blog/c4_embedded.md
+    - blog/buck_converter_arduino.md
 
 google_analytics:
   - UA-181389079-1
