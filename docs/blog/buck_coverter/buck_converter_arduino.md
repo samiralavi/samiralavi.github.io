@@ -75,3 +75,5 @@ Connect everything as in the schematic above and upload the next code to your Ar
 This circuit is able to increase and decrease the voltage and keep that value steady for the same LOAD, in this case a 100 ohm resistor, as we can see in the picture below. But if we change the output load the discharge time of the output will change as well since for lower loads there will be a higher amount of current passing. So if the discharging time is faster or slower the duty cycle should change as well. For that we should add a feedback system to our circuit that would sense the output voltage and correct the PWM duty in order to keep the same desired value. In the next figure, you can find the real connection on the prototyping board with the connection to Arduino UNO. 
 
 ![buck_converter_schematic](images/breadboard_image_buck_converter.png)
+
+[PWM Generation Code for Arduino UNO](downloads/arduino_pwm_code.ino)
