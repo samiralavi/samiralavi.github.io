@@ -18,6 +18,9 @@ extra:
       link: https://github.com/samiralavi
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/seyed-amir-alavi/
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UC57CLD9DWuUy2-rowVvj0Eg
+
 markdown_extensions:
   - meta
   - attr_list
