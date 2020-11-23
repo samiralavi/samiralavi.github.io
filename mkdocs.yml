@@ -19,6 +19,7 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/seyed-amir-alavi/
 markdown_extensions:
+  - meta
   - attr_list
 plugins:
   - search # necessary for search to work
