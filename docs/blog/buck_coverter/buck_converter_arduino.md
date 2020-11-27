@@ -4,7 +4,9 @@ description: This tutorial teaches the basics of DC-DC buck converters with a ex
 # DC-DC Buck Converter with Arduino Uno
 
 ## Video of the Experiment
-You can watch the video of this experiment by following this link: [Video on Youtube](https://youtu.be/zWer2KIcYE4)
+You can watch the video of this experiment by following this link: 
+
+[![DC-DC Buck Converter with Arduino Uno](https://img.youtube.com/vi/zWer2KIcYE4/0.jpg)](https://www.youtube.com/watch?v=zWer2KIcYE4)
 
 ## Introduction
 In this experiment, we want to build a cheap DC-DC buck converter using the common electronic components available online. The pulse width modulation (PWM) switching signal is generated using Arduino Uno and drives the gate of P-Channel Metal oxide silicon field effect transistor (MOSFET) through a bipolar junction transistor (BJT).
@@ -123,4 +125,4 @@ void loop() {
 
 
 ## Video of the Experiment
-You can watch the video of this experiment by following this link: [Video on Youtube](https://youtu.be/zWer2KIcYE4)
+You can watch the video of this experiment by following this link: [Video on Youtube](https://www.youtube.com/watch?v=zWer2KIcYE4)
