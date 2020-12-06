@@ -2,6 +2,7 @@
 
 For a complete list of my published research articles, refeer to my [Google Scholar profile](https://scholar.google.co.uk/citations?user=Irm9I_IAAAAJ&hl=en).
 
+- [Alavi, Seyed Amir, Xiaomiao Li, and Kamyar Mehran. "Delay resilient networked control with application to microgrids." Control Strategy for Time-Delay Systems: Part II: Engineering Applications **2020**.](https://www.elsevier.com/books/control-strategy-for-time-delay-systems/khooban/978-0-323-85347-7)
 - [S. A. Alavi, K. Mehran and Y. Hao, "Optimal Observer Synthesis for Microgrids With Adaptive Send-on-Delta Sampling Over IoT Communication Networks," in IEEE Transactions on Industrial Electronics, November **2020**, doi: 10.1109/TIE.2020.3034853.](downloads/papers/tie_2020.pdf)
 - [S. A. Alavi, M. Javadipourand K. Mehran, “Microgrid State Estimation and IoT: Modelling Concepts and Design Algorithm”. TechRxiv, November **2020**.](downloads/papers/techarxiv_2020.pdf)
 - [M. Doostinia, M. T. H. Beheshti and S. A. Alavi, "A Distributed Control Strategy with Fractional Order PI Controller for DC Microgrid," **2019** Smart Grid Conference (SGC), Tehran, Iran, **2019**, pp. 1-6, doi: 10.1109/SGC49328.2019.9056587.](downloads/papers/sgc_2019.pdf)
