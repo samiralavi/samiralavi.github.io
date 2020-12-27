@@ -11,7 +11,7 @@ theme:
     accent: deep orange
   features:
     - navigation.instant
-#    - navigation.tabs
+    - navigation.expand
 extra:
   social:
     - icon: fontawesome/brands/github
