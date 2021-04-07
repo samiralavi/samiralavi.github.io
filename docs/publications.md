@@ -1,6 +1,7 @@
 # Publications
 
 For a complete list of my published research articles, refeer to my [Google Scholar profile](https://scholar.google.co.uk/citations?user=Irm9I_IAAAAJ&hl=en).
+
 - [S. A. Alavi, K. Mehran, V. Vahidinasab and J. P. S. Catalão, "Forecast Based Consensus Control for DC Microgrids Using Distributed Long Short-Term Memory Deep Learning Models," in IEEE Transactions on Smart Grid, **2021**, doi: 10.1109/TSG.2021.3070959.](downloads/papers/tsg_2021.pdf)
 - [Alavi, Seyed Amir, Xiaomiao Li, and Kamyar Mehran. "Delay resilient networked control with application to microgrids." Control Strategy for Time-Delay Systems: Part II: Engineering Applications **2020**, Publisher: Academic Press.](https://www.elsevier.com/books/control-strategy-for-time-delay-systems/khooban/978-0-323-85347-7)
 - [S. A. Alavi, K. Mehran and Y. Hao, "Optimal Observer Synthesis for Microgrids With Adaptive Send-on-Delta Sampling Over IoT Communication Networks," in IEEE Transactions on Industrial Electronics, November **2020**, doi: 10.1109/TIE.2020.3034853.](downloads/papers/tie_2020.pdf)
