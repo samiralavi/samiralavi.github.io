@@ -3,7 +3,7 @@
 ## Academic Teaching
 
 ### Advanced Control systems (Lecturer)
-Semester B, 2019-20, and 2020-21 
+Semester B, 2019-20, and 2020-21  
 School of Electronic Engineering and Computer Science, Queen Mary University of London, London, UK
 
 ### Electrical Machines (Teaching Assistant)
