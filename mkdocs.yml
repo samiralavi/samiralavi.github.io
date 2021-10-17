@@ -1,17 +1,40 @@
 site_name: Seyed Amir Alavi
 site_author: Seyed Amir Alavi
 site_url: https://samiralavi.github.io/
+repo_url: https://github.com/samiralavi/samiralavi.github.io
+repo_name: samiralavi.github.io
+
 theme:
   name: material
+  language: en
   icon:
     logo: material/contacts
   favicon: images/favicon.png
   palette:
-    primary: purple
-    accent: deep orange
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+      primary: indigo
+      accent: blue
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+      primary: red
+      accent: red
+
   features:
     - navigation.instant
     - navigation.expand
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -20,6 +43,10 @@ extra:
       link: https://www.linkedin.com/in/seyed-amir-alavi/
     - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/channel/UC57CLD9DWuUy2-rowVvj0Eg
+  analytics:
+    provider: google
+    property: UA-181389079-1
+  disqus: samiralavi
 
 markdown_extensions:
   - meta
@@ -38,7 +65,3 @@ nav:
   - contact.md
   - Blog:
     - blog/buck_coverter/buck_converter_arduino.md
-
-google_analytics:
-  - UA-181389079-1
-  - auto
