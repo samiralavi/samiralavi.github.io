@@ -50,6 +50,7 @@ extra:
 
 markdown_extensions:
   - meta
+  - md_in_html
   - attr_list
   - toc:
       permalink: true
@@ -65,3 +66,4 @@ nav:
   - contact.md
   - Blog:
     - blog/buck_coverter/buck_converter_arduino.md
+    - blog/iot_communication_patterns/iot_communication_patterns.md
