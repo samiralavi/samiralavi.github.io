@@ -56,14 +56,4 @@ markdown_extensions:
       permalink: true
 plugins:
   - search # necessary for search to work
-
-nav:
-  - index.md
-  - activities.md
-  - interests.md
-  - publications.md
-  - teaching.md
-  - contact.md
-  - Blog:
-    - blog/buck_coverter/buck_converter_arduino.md
-    - blog/iot_communication_patterns/iot_communication_patterns.md
+  - awesome-pages
