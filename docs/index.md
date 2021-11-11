@@ -1,6 +1,6 @@
 ---
 title: Home
-description: My name is Seyed Amir Alavi and this is my personal website. I frequently publish articles about IoT, control systems and embedded software development based on my latest research experience.
+description: My name is Amir. I frequently publish articles about IoT, control systems, and embedded software development on this website based on my latest research experience.
 ---
 
 # Seyed Amir Alavi | IoT & Embedded Control Systems Blog 
