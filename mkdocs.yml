@@ -1,7 +1,6 @@
 site_name: Seyed Amir Alavi | IoT - Embedded Control Systems
 site_author: Seyed Amir Alavi
 site_url: https://samiralavi.github.io/
-repo_url: https://github.com/samiralavi/samiralavi.github.io
 repo_name: samiralavi.github.io
 
 theme:
@@ -45,7 +44,7 @@ extra:
       link: https://www.youtube.com/channel/UC57CLD9DWuUy2-rowVvj0Eg
   analytics:
     provider: google
-    property: UA-181389079-1
+    property: G-NL4RPWEYBQ
   disqus: samiralavi
 
 markdown_extensions:
