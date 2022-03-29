@@ -57,3 +57,5 @@ markdown_extensions:
 plugins:
   - search # necessary for search to work
   - awesome-pages
+
+copyright: <a href="#" id="open_preferences_center">Change your cookie preferences</a>
