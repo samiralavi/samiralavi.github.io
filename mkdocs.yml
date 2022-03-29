@@ -5,6 +5,7 @@ repo_name: samiralavi.github.io
 
 theme:
   name: material
+  custom_dir: overrides
   language: en
   icon:
     logo: material/contacts
