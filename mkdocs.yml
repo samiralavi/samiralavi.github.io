@@ -27,7 +27,6 @@ theme:
       accent: red
 
   features:
-    - navigation.instant
     - navigation.expand
     - navigation.sections
     - toc.integrate
