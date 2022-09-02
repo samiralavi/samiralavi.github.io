@@ -4,6 +4,7 @@ description: Arduino Cheat Sheet Coaster, Gold Printed Circuit Board, Unique Gif
 # Arduino Cheat Sheet Coaster, Gold Printed Circuit Board, Unique Gift for Electronic Engineers, Scientists, and Students
 
 
+<div>
 
 ![Arduino Cheat Sheet Coaster](images/image_1.jpg){ align=right }
 
@@ -17,11 +18,16 @@ Dimensions: 10 cm x 10 cm [3.94" x 3.94"]
 Thickness: 1.6 mm [0.04"]
 Weight: 30g
 
+</div>
 
 ## Order Options
+<div>
+
 ![Arduino Cheat Sheet Coaster](images/image_2.jpg){ align=right }
 
 You can order this coaster from my online shops (IoTUp) on these online marketplaces (**for 30% discount use "THANKYOU" code at the checkout**):
 
 - [IoTUp Shop on Etsy](https://www.etsy.com/uk/shop/IoTUp) 
-- [IoTUp Shop on Amazon](https://www.amazon.co.uk/Coaster-Electronic-Engineers-Scientists-Students/dp/B0B8PHMSVF) 
+- [IoTUp Shop on Amazon](https://www.amazon.co.uk/Coaster-Electronic-Engineers-Scientists-Students/dp/B0B8PHMSVF)
+
+</div>
