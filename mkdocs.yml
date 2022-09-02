@@ -56,5 +56,6 @@ markdown_extensions:
 plugins:
   - search # necessary for search to work
   - awesome-pages
+  - glightbox
 
 copyright: Copyright &copy; 2019 - 2022 Seyed Amir Alavi
