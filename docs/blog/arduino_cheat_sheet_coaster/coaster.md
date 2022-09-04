@@ -4,7 +4,7 @@ description: Arduino Cheat Sheet Coaster, Gold Printed Circuit Board, Unique Gif
 # Arduino Cheat Sheet Coaster, Gold Printed Circuit Board, Unique Gift for Electronic Engineers, Scientists, and Students
 
 
-<img alt="Arduino Cheat Sheet Coaster" style="float: right; width:400px; margin-left:10px" src="images/image_1.jpg">
+![Arduino Cheat Sheet Coaster](images/image_1.jpg){ align=left width:400px }
 
 I have designed this lovely coaster that reminds anyone of the perfect engineering embedded in Arduino after every sip of their coffee. It is made of high-quality printed circuit board (PCB) material, lead-free, and gold plated with nice round corners. It feels very professional and is a must if you work with electronic devices. The content of the cheat sheet is carefully chosen by me after working with Arduino for many years to include the mostly used commands and libraries.
 
@@ -19,7 +19,7 @@ Weight: 30g
 
 ## Order Options
 
-<img alt="Arduino Cheat Sheet Coaster" style="float: right;width:400px;margin-left:10px" src="images/image_2.jpg">
+![Arduino Cheat Sheet Coaster](images/image_2.jpg){ align=right width:400px margin-left:10px }
 
 You can order this coaster from my online shops (IoTUp) on these online marketplaces (**for 30% discount use "THANKYOU" code at the checkout**):
 
