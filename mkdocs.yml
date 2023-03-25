@@ -1,4 +1,4 @@
-site_name: Seyed Amir Alavi | IoT - Embedded Control Systems
+site_name: Seyed Amir Alavi | Embedded Software Engineer
 site_author: Seyed Amir Alavi
 site_url: https://samiralavi.github.io/
 repo_name: samiralavi.github.io
@@ -45,9 +45,11 @@ extra:
   analytics:
     provider: google
     property: G-NL4RPWEYBQ
-  disqus: samiralavi
 
 markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
   - meta
   - md_in_html
   - attr_list
@@ -57,4 +59,4 @@ plugins:
   - search # necessary for search to work
   - awesome-pages
 
-copyright: Copyright &copy; 2019 - 2022 Seyed Amir Alavi
+copyright: Copyright &copy; 2019 - 2023 Seyed Amir Alavi

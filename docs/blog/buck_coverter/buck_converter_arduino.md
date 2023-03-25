@@ -1,4 +1,5 @@
 ---
+comments: true
 description: This tutorial teaches the basics of DC-DC buck converters with a experimental Arduino-based circuit, for learning purposes.
 ---
 # DC-DC Buck Converter with Arduino Uno

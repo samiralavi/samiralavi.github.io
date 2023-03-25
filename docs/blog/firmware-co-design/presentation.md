@@ -1,4 +1,5 @@
 ---
+comments: true
 description: This guide discusses the practices in co-designing firmware and IP cores for FPGA-based solutions in C++/SystemC using Verilator.
 ---
 # Firmware Co-Design & Development for IP Cores in C++/SystemC using Verilator

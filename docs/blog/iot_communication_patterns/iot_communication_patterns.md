@@ -1,4 +1,5 @@
 ---
+comments: true
 description: This guide reviews common communication patterns for IoT devices and distributed control systems.
 ---
 # Communication Patterns for Distributed Control Systems and IoT Devices
