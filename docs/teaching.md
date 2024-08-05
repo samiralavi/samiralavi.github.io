@@ -1,6 +1,6 @@
 # Teaching
 
-## Academic Teaching
+# Academic
 
 ### Advanced Control systems (Lecturer)
 Semester B, 2019-20, and 2020-21  
@@ -18,7 +18,7 @@ School of Electronic Engineering and Computer Science, Queen Mary University of 
 Semester B, 2017-18  
 School of Electronic Engineering and Computer Science, Queen Mary University of London, London, UK
 
-## Workshops
+# Workshops
 
 ### DC-DC converter design using Arduino
 2021, London, UK
