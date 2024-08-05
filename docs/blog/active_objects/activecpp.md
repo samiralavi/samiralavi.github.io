@@ -4,7 +4,7 @@ I am excited to share my recent project, ActiveCpp, which is now live on my webs
 
 ## Why ActiveCpp?
 
-As a software developer, I have always been fascinated by the potential of asynchronous programming. However, I often found it challenging to write efficient and maintainable asynchronous code in C++. That's when I decided to create ActiveCpp. The original idea was in an abandoned repository https://github.com/lightful/syscpp, which helped me at the time a lot. Therefore I decided to revive this dead project and support it to further help the engineers like me develop event-driven systems in Modern C++ more efficiently.
+As a software developer, I have always been fascinated by the potential of asynchronous programming. However, I often found it challenging to write efficient and maintainable asynchronous code in C++. That's when I decided to create ActiveCpp. The original idea was in an abandoned repository [lightful/syscpp](https://github.com/lightful/syscpp), which helped me at the time a lot. Therefore I decided to revive this dead project and support it to further help the engineers like me develop event-driven systems in Modern C++ more efficiently.
 
 ActiveCpp provides a set of intuitive and easy-to-use abstractions that make it effortless to write asynchronous code. It leverages the power of coroutines and event-driven programming to handle concurrency and improve the responsiveness of C++ applications.
 
