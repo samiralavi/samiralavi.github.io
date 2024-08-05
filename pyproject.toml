@@ -1,0 +1,15 @@
+[tool.poetry]
+package-mode = false
+description = ""
+authors = ["Seyed Amir Alavi <seydamir@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+mkdocs-material = "^9.5"
+mike = "^2.1"
+mkdocs-awesome-pages-plugin = "^2.9"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
