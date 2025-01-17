@@ -1,7 +1,9 @@
 # Contact
 
-Address: Riverlane, First Floor, 1st Floor, St. Andrews House,59 St. Andrews Street, Cambridge, CB2 3BZ.
+Address: Roku UK, 2 Cambridge Science Park Milton Rd, Milton, Cambridge CB4 0AF.
 
-Email: [s.alavi@qmul.ac.uk](mailto:s.alavi@qmul.ac.uk), [amir.alavi@riverlane.com](mailto:amir.alavi@riverlane.com)
+Email: [s.alavi@qmul.ac.uk](mailto:s.alavi@qmul.ac.uk),
 
 LinkedIn: [https://www.linkedin.com/in/seyed-amir-alavi/](https://www.linkedin.com/in/seyed-amir-alavi/)
+
+X: [https://x.com/samiralavi_real](https://x.com/samiralavi_real)

@@ -41,7 +41,9 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/seyed-amir-alavi/
     - icon: fontawesome/brands/youtube
-      link: https://www.youtube.com/channel/UC57CLD9DWuUy2-rowVvj0Eg
+      link: https://www.youtube.com/@Gear4Hackers
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/samiralavi_real
   analytics:
     provider: google
     property: G-NL4RPWEYBQ
@@ -55,8 +57,26 @@ markdown_extensions:
   - attr_list
   - toc:
       permalink: true
+
 plugins:
   - search # necessary for search to work
-  - awesome-pages
+  - blog:
+      blog_toc: true
+  - rss:
+      match_path: blog/posts/.*
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+        - tags
+
+nav:
+  - index.md
+  - activities.md
+  - interests.md
+  - publications.md
+  - teaching.md
+  - contact.md
+  - blog/index.md
 
 copyright: Copyright &copy; 2019 - 2023 Seyed Amir Alavi

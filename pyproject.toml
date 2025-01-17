@@ -9,6 +9,7 @@ python = "^3.10"
 mkdocs-material = "^9.5"
 mike = "^2.1"
 mkdocs-awesome-pages-plugin = "^2.9"
+mkdocs-rss-plugin = "^1.17"
 
 [build-system]
 requires = ["poetry-core"]

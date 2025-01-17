@@ -1,4 +1,5 @@
 ---
+date: 2021-11-05
 comments: true
 description: This guide reviews common communication patterns for IoT devices and distributed control systems.
 ---

@@ -1,4 +1,5 @@
 ---
+date: 2023-03-25
 comments: true
 description: In this post, I show you how to share USB devices with your WSL instances and Docker containers.
 ---
