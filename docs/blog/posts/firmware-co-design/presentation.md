@@ -15,6 +15,8 @@ Co-design of software and hardware for FGPA-based embedded systems has become a 
 - Analysis of simulation results with open source tools
 - Real-time simulation of verilated models with QEMU for system integration
 
+<!-- more -->
+
 The presentation slides are available on SlideShare. My video presentation is available on [Embedded Online Conference 2022](https://embeddedonlineconference.com/theatre/Firmware_Co-Design_and_Development_for_IP_Cores_in_Cplusplus_SystemC_using_Verilator) website.
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/DBCGGpXr9Apdg2" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/SeyedAmirAlavi1/firmware-codesign-development-for-ip-cores-in-csystemc-using-verilator" title="Firmware Co-Design &amp; Development for IP Cores in C++/SystemC using Verilator" target="_blank">Firmware Co-Design &amp; Development for IP Cores in C++/SystemC using Verilator</a> </strong> from <strong><a href="//www.slideshare.net/SeyedAmirAlavi1" target="_blank">SeyedAmirAlavi</a></strong> </div>

@@ -6,6 +6,8 @@ date: 2024-08-05
 
 I am excited to share my recent project, ActiveCpp, which is now live on my website [samiralavi.github.io/activecpp/main](https://samiralavi.github.io/activecpp/main/). ActiveCpp is a powerful and versatile C++ library that simplifies asynchronous programming and enables developers to create highly responsive applications.
 
+<!-- more -->
+
 ## Why ActiveCpp?
 
 As a software developer, I have always been fascinated by the potential of asynchronous programming. However, I often found it challenging to write efficient and maintainable asynchronous code in C++. That's when I decided to create ActiveCpp. The original idea was in an abandoned repository [lightful/syscpp](https://github.com/lightful/syscpp), which helped me at the time a lot. Therefore I decided to revive this dead project and support it to further help the engineers like me develop event-driven systems in Modern C++ more efficiently.

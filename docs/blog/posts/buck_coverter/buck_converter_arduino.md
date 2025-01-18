@@ -15,6 +15,8 @@ In this experiment, we want to build a cheap DC-DC buck converter using the comm
 
 A buck converter or a step-down converter is a DC-to-DC power converter, which steps down voltage (while stepping up current) from its input (supply) to its output (load). It is a class of switched-mode power supply (SMPS), typically containing at least two semiconductors (a diode and a transistor, although modern buck converters frequently replace the diode with a second transistor used for synchronous rectification) and at least one energy storage element, a capacitor, inductor, or the two in combination. To reduce voltage ripple, filters made of capacitors (sometimes in combination with inductors) are normally added to such a converter's output (load-side filter) and input (supply-side filter). 
 
+<!-- more -->
+
 First, the theory of DC-DC buck converter is provided. Second, the list of components used in this experiment is provided. Finally, the schematic and the circuit of the DC-DC converter is provided.
 
 ## Theory of DC-DC Buck Converter Operation

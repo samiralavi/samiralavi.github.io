@@ -10,6 +10,8 @@ description: Arduino Cheat Sheet Coaster, Gold Printed Circuit Board, Unique Gif
 
 I have designed this lovely coaster that reminds anyone of the perfect engineering embedded in Arduino after every sip of their coffee. It is made of high-quality printed circuit board (PCB) material, lead-free, and gold plated with nice round corners. It feels very professional and is a must if you work with electronic devices. The content of the cheat sheet is carefully chosen by me after working with Arduino for many years to include the mostly used commands and libraries.
 
+<!-- more -->
+
 The coaster has the drawing of Arduino Uno board pin map for quick reference, making it easy to work with Arduino in lab.
 
 The item has the following specifications: 

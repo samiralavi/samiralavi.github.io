@@ -13,6 +13,7 @@ There are several communication models that can be used in a distributed control
   <figcaption>Figure 1: a) Request-Response pattern, and b) Events pattern</figcaption>
 </figure>
 
+<!-- more -->
 
 ## 1) Request-Response
 This communication model is one of the most commonly known models. It consists of a client that requests a service from a server, as shown in Figure 1 (a). It is a useful model for the client-server or master-slave architectures, however, a drawback of this model is the inequality of participants, which is apparent in the network topology. This makes it difficult for the bidirectional communication scenario, in which both the parties request information from each other, especially if firewalls are present. Consequently, either events, event-subscriptions, or security is difficult to manage, and require additional services and substantial resources if firewalls are used in the network.

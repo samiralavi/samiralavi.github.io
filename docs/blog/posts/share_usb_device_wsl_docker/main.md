@@ -7,6 +7,8 @@ description: In this post, I show you how to share USB devices with your WSL ins
 
 Recently, I have faced an issue in accessing my USB JLink programmer from inside a docker container using WSL 2. I have found that this process is not well documented and requires advanced understanding of how USB devices work under WSL and inside Linux. After spending a few hours and playing with different tools and commands, I decided to document the steps I have followed here for the community.
 
+<!-- more -->
+
 ### My System Configuration
 For your information, I have mentioned my system configuration here:
 
