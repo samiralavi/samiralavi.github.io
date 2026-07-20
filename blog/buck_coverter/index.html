@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/png" href="/images/favicon.png"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Amir Alavi" href="https://samiralavi.github.io/rss.xml"><meta name="generator" content="Astro v5.18.2"><title>DC-DC Buck Converter with Arduino Uno | Amir Alavi</title><link rel="canonical" href="https://samiralavi.github.io/blog/buck_coverter/"><meta name="description" content="This tutorial teaches the basics of DC-DC buck converters with a experimental Arduino-based circuit, for learning purposes."><meta name="robots" content="index, follow"><meta property="og:title" content="DC-DC Buck Converter with Arduino Uno | Amir Alavi"><meta property="og:type" content="article"><meta property="og:image" content="https://samiralavi.github.io/og/blog/buck_coverter.png"><meta property="og:url" content="https://samiralavi.github.io/blog/buck_coverter/"><meta property="og:description" content="This tutorial teaches the basics of DC-DC buck converters with a experimental Arduino-based circuit, for learning purposes."><meta property="og:locale" content="en_GB"><meta property="og:site_name" content="Amir Alavi"><meta property="og:image:url" content="https://samiralavi.github.io/og/blog/buck_coverter.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="DC-DC Buck Converter with Arduino Uno"><meta property="article:published_time" content="2020-11-22T00:00:00.000Z"><meta property="article:modified_time" content="2020-11-22T00:00:00.000Z"><meta property="article:author" content="Amir Alavi"><meta property="article:tag" content="Arduino"><meta property="article:tag" content="Power Electronics"><meta property="article:tag" content="Tutorial"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@samiralavi_real"><meta name="twitter:title" content="DC-DC Buck Converter with Arduino Uno | Amir Alavi"><meta name="twitter:image" content="https://samiralavi.github.io/og/blog/buck_coverter.png"><meta name="twitter:image:alt" content="DC-DC Buck Converter with Arduino Uno"><meta name="twitter:description" content="This tutorial teaches the basics of DC-DC buck converters with a experimental Arduino-based circuit, for learning purposes."><meta name="twitter:creator" content="@samiralavi_real"><meta name="author" content="Amir Alavi"><!-- Structured data (JSON-LD) --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Amir Alavi","url":"https://samiralavi.github.io","image":"https://samiralavi.github.io/og/blog/buck_coverter.png","jobTitle":"Embedded Systems Engineer","sameAs":["https://github.com/samiralavi","https://www.linkedin.com/in/seyed-amir-alavi/","https://www.youtube.com/@Gear4Hackers","https://x.com/samiralavi_real","https://scholar.google.co.uk/citations?user=Irm9I_IAAAAJ&hl=en"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"DC-DC Buck Converter with Arduino Uno","description":"This tutorial teaches the basics of DC-DC buck converters with a experimental Arduino-based circuit, for learning purposes.","image":"https://samiralavi.github.io/og/blog/buck_coverter.png","url":"https://samiralavi.github.io/blog/buck_coverter/","datePublished":"2020-11-22T00:00:00.000Z","dateModified":"2020-11-22T00:00:00.000Z","author":{"@type":"Person","name":"Amir Alavi","url":"https://samiralavi.github.io"},"keywords":"Arduino, Power Electronics, Tutorial","mainEntityOfPage":{"@type":"WebPage","@id":"https://samiralavi.github.io/blog/buck_coverter/"}}</script><!-- Set theme before paint to avoid flash --><script>
+  (function () {
+    const stored = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    const theme = stored || (prefersDark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script><!-- Google AdSense --><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6763725768300978" crossorigin="anonymous"></script><!-- Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-NL4RPWEYBQ"></script><script>(function(){const GA_MEASUREMENT_ID = "G-NL4RPWEYBQ";
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", GA_MEASUREMENT_ID);
+})();</script><style>.comments[data-astro-cid-jvxsf75u]{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}.back-link[data-astro-cid-2q5oecfc]{display:inline-block;margin-bottom:1.25rem;font-size:.9rem;font-weight:500;color:var(--text-muted)}.back-link[data-astro-cid-2q5oecfc]:hover{color:var(--accent);text-decoration:none}.post-header[data-astro-cid-2q5oecfc]{margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.post-header[data-astro-cid-2q5oecfc] h1[data-astro-cid-2q5oecfc]{margin-bottom:.75rem}.post-meta[data-astro-cid-2q5oecfc]{color:var(--text-muted);font-size:.95rem}.updated[data-astro-cid-2q5oecfc]{margin-left:.35rem;font-style:italic}.tags[data-astro-cid-2q5oecfc]{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}.tag[data-astro-cid-2q5oecfc]{font-size:.8rem;font-weight:500;padding:.25rem .7rem;border-radius:999px;background:var(--accent-soft);color:var(--accent)}.post-body[data-astro-cid-2q5oecfc] img{border-radius:var(--radius);border:1px solid var(--border)}
+</style>
+<link rel="stylesheet" href="/_astro/_slug_.FOaW6w7N.css"></head> <body> <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner" data-astro-cid-3ef6ksr2> <a href="/" class="brand" data-astro-cid-3ef6ksr2> <span class="brand-mark" data-astro-cid-3ef6ksr2>AA</span> <span class="brand-name" data-astro-cid-3ef6ksr2>Amir Alavi</span> </a> <nav class="nav" aria-label="Primary" data-astro-cid-3ef6ksr2> <a href="/" class="nav-link" data-astro-cid-3ef6ksr2> Home </a><a href="/activities" class="nav-link" data-astro-cid-3ef6ksr2> Activities </a><a href="/interests" class="nav-link" data-astro-cid-3ef6ksr2> Interests </a><a href="/publications" class="nav-link" data-astro-cid-3ef6ksr2> Publications </a><a href="/teaching" class="nav-link" data-astro-cid-3ef6ksr2> Teaching </a><a href="/blog" class="nav-link active" data-astro-cid-3ef6ksr2> Blog </a><a href="/contact" class="nav-link" data-astro-cid-3ef6ksr2> Contact </a> </nav> <div class="header-actions" data-astro-cid-3ef6ksr2> <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme" data-astro-cid-x3pjskd3> <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-x3pjskd3> <circle cx="12" cy="12" r="4" data-astro-cid-x3pjskd3></circle> <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" data-astro-cid-x3pjskd3></path> </svg> <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-x3pjskd3> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" data-astro-cid-x3pjskd3></path> </svg> </button>  <script type="module">const e=document.getElementById("theme-toggle");e?.addEventListener("click",()=>{const t=document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark";document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t)});</script> <button id="nav-toggle" class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2></span><span data-astro-cid-3ef6ksr2></span><span data-astro-cid-3ef6ksr2></span> </button> </div> </div> <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile" data-astro-cid-3ef6ksr2> <a href="/" class="nav-link" data-astro-cid-3ef6ksr2> Home </a><a href="/activities" class="nav-link" data-astro-cid-3ef6ksr2> Activities </a><a href="/interests" class="nav-link" data-astro-cid-3ef6ksr2> Interests </a><a href="/publications" class="nav-link" data-astro-cid-3ef6ksr2> Publications </a><a href="/teaching" class="nav-link" data-astro-cid-3ef6ksr2> Teaching </a><a href="/blog" class="nav-link active" data-astro-cid-3ef6ksr2> Blog </a><a href="/contact" class="nav-link" data-astro-cid-3ef6ksr2> Contact </a> </nav> </header>  <script type="module">const e=document.getElementById("nav-toggle"),n=document.getElementById("mobile-nav");e?.addEventListener("click",()=>{const t=n?.classList.toggle("open");e.setAttribute("aria-expanded",t?"true":"false")});</script> <main>  <article class="post" data-astro-cid-2q5oecfc> <a href="/blog" class="back-link" data-astro-cid-2q5oecfc>&larr; Back to Blog</a> <header class="post-header" data-astro-cid-2q5oecfc> <h1 data-astro-cid-2q5oecfc>DC-DC Buck Converter with Arduino Uno</h1> <div class="post-meta" data-astro-cid-2q5oecfc> <time datetime="2020-11-22T00:00:00.000Z"> 22 November 2020 </time>  </div> <div class="tags" data-astro-cid-2q5oecfc> <span class="tag" data-astro-cid-2q5oecfc>Arduino</span><span class="tag" data-astro-cid-2q5oecfc>Power Electronics</span><span class="tag" data-astro-cid-2q5oecfc>Tutorial</span> </div> </header> <div class="prose post-body" data-astro-cid-2q5oecfc>  <h2 id="video-of-the-experiment">Video of the Experiment</h2>
+<p>You can watch the video of this experiment by following this link:</p>
+<p><a href="https://www.youtube.com/watch?v=zWer2KIcYE4"><img src="https://img.youtube.com/vi/zWer2KIcYE4/0.jpg" alt="DC-DC Buck Converter with Arduino Uno"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>In this experiment, we want to build a cheap DC-DC buck converter using the common electronic components available online. The pulse width modulation (PWM) switching signal is generated using Arduino Uno and drives the gate of P-Channel Metal oxide silicon field effect transistor (MOSFET) through a bipolar junction transistor (BJT).</p>
+<p>A buck converter or a step-down converter is a DC-to-DC power converter, which steps down voltage (while stepping up current) from its input (supply) to its output (load). It is a class of switched-mode power supply (SMPS), typically containing at least two semiconductors (a diode and a transistor, although modern buck converters frequently replace the diode with a second transistor used for synchronous rectification) and at least one energy storage element, a capacitor, inductor, or the two in combination. To reduce voltage ripple, filters made of capacitors (sometimes in combination with inductors) are normally added to such a converter’s output (load-side filter) and input (supply-side filter).</p>
+<p>First, the theory of DC-DC buck converter is provided. Second, the list of components used in this experiment is provided. Finally, the schematic and the circuit of the DC-DC converter is provided.</p>
+<h2 id="theory-of-dc-dc-buck-converter-operation">Theory of DC-DC Buck Converter Operation</h2>
+<p>A basic circuit of a buck converter is provided. In order to study how it works, we will divide it in two stages. The ON and OFF stages. In the ON state, the switch is closed as we can see in the next figure, where the diode is open because the cathode voltage is higher than the anode.</p>
+<p><img alt="buck converter operation image" loading="lazy" decoding="async" fetchpriority="auto" width="348" height="354" src="/_astro/buck_converter_operation.rs1zJSuO_O4onP.webp" ></p>
+<p><em>Figure 1: Basic circuit for a DC-DC buck converter</em></p>
+<p>The switching transistor between the input and output of the buck converter continually switches on and off at high frequency. To maintain a continuous output, the circuit uses the energy stored in the inductor L, during the on periods of the switching transistor, to continue supplying the load during the off periods. The circuit operation depends on what is sometimes also called a Flywheel circuit. This is because the circuit acts rather like a mechanical flywheel that, given regularly spaced pulses of energy keeps spinning smoothly (outputting energy) at a steady rate.</p>
+<p>When the switch is first closed (on-state), the current will begin to increase, and the inductor will produce an opposing voltage across its terminals in response to the changing current. This voltage drop counteracts the voltage of the source and therefore reduces the net voltage across the load. Over time, the rate of change of current decreases, and the voltage across the inductor also then decreases, increasing the voltage at the load. During this time, the inductor stores energy in the form of a magnetic field. If the switch is opened while the current is still changing, then there will always be a voltage drop across the inductor, so the net voltage at the load will always be less than the input voltage source. When the switch is ON the inductor will charge up and the voltage on the inductor will be the difference between the output and the input. But we also know that the inductor voltage is the inductance L multiplied by the inductor current derivate. As we can see in the next figure, we obtain the ON current through the inductor.</p>
+<p><img alt="buck converter on state image" loading="lazy" decoding="async" fetchpriority="auto" width="470" height="356" src="/_astro/buck_converter_on_state.DnKM9IpK_1fqeEI.webp" ></p>
+<p><img alt="on state equations" loading="lazy" decoding="async" fetchpriority="auto" width="563" height="225" src="/_astro/on_state_equations.BeLPCPY9_ZDzchH.webp" ></p>
+<p><em>Figure 2: ON state of the buck converter</em></p>
+<p>When the switch is opened again (off-state), the voltage source will be removed from the circuit, and the current will decrease. The decreasing current will produce a voltage drop across the inductor (opposite to the drop at on-state), and now the inductor becomes a Current Source. The stored energy in the inductor’s magnetic field supports the current flow through the load. This current, flowing while the input voltage source is disconnected, when concatenated with the current flowing during on-state, totals to current greater than the average input current (being zero during off-state). The “increase” in average current makes up for the reduction in voltage, and ideally preserves the power provided to the load. During the off-state, the inductor is discharging its stored energy into the rest of the circuit. If the switch is closed again before the inductor fully discharges, the voltage at the load will always be greater than zero. In this case the voltage across the inductor is the output voltage. So once again using the next figure formulas we obtain the current of the OFF part.</p>
+<p><img alt="buck converter off state image" loading="lazy" decoding="async" fetchpriority="auto" width="470" height="383" src="/_astro/buck_converter_off_state.ioMI3d2c_Z29sXEj.webp" ></p>
+<p><img alt="off state equations" loading="lazy" decoding="async" fetchpriority="auto" width="596" height="213" src="/_astro/off_state_equations.BYQH3k0A_Z117UUq.webp" ></p>
+<p><em>Figure 3: OFF state of the buck converter</em></p>
+<p>Now if we want to obtain the output depending on the input and the duty cycle of the PWM all we have to do is to make the sum of the On and Off current equal to 0. That means that the On current is equal to the Off current. So, this will give us:</p>
+<p><img alt="input output equations" loading="lazy" decoding="async" fetchpriority="auto" width="656" height="150" src="/_astro/input_output_equation.BIkESuHc_1x73HV.webp" ></p>
+<p><em>Figure 4: Input-output voltage equation</em></p>
+<h2 id="list-of-components-for-the-building-and-testing-the-dc-dc-buck-converter">List of components for the building and testing the DC-DC buck converter</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Component</th><th>Quantity</th></tr></thead><tbody><tr><td>IRF4905PBF</td><td>1</td></tr><tr><td>1N5819</td><td>1</td></tr><tr><td>Panasonic 100μF 16V Electrolytic Capacitor</td><td>2</td></tr><tr><td>150 μH ±15% Power Inductor, 2A Idc, 106mΩ Rdc</td><td>1</td></tr><tr><td>SS8050DTA NPN Transistor, 1.5 A, 25 V</td><td>1</td></tr><tr><td>1kΩ Resistor</td><td>2</td></tr><tr><td>10kΩ Through Hole Trimmer Potentiometer</td><td>1</td></tr><tr><td>Jumper wires (male to male)</td><td>10</td></tr><tr><td>9V battery</td><td>1</td></tr><tr><td>9V battery contact</td><td>1</td></tr><tr><td>Arduino Uno with USB cable</td><td>1</td></tr><tr><td>Osciloscopte</td><td>1</td></tr><tr><td>Breadboard</td><td>1</td></tr></tbody></table>
+<h2 id="building-the-dc-dc-buck-converter-circuit-using-arduino-as-the-pwm-source">Building the DC-DC buck converter circuit using Arduino as the PWM source</h2>
+<p>The Arduino UNO already has a 5V linear voltage regulator that will lower the efficiency of the circuit. So the main goal is to learn how the circuit, the feedback and the PWM signal work in order to achieve the desired output.</p>
+<p><img alt="buck_converter_schematic" loading="lazy" decoding="async" fetchpriority="auto" width="2018" height="672" src="/_astro/buck_converter_schematic.DAn61Abb_Z20n0xo.webp" ></p>
+<p><em>Figure 5: Schematic of Arduino-based DC-DC buck converter</em></p>
+<p>As you can see in the schematic above we have a potentiometer connected to the analog input A0. With this potentiometer we will choose the output value between 1 and 9 volts since the maximum input voltage in this case is 9V. With the Arduino’s ADC we will read a value between 0 and 1024, next, in the code we map that value from 1 to 244 which are the values used with the analogWrite function of the Arduino. With this we will apply a PWM signal on pin D3 where 1 is the lowest duty cycle and 244 the maximum. Since the Arduino digital value is 5V we add a small BJT driver using one S8050 NPN and two resistors of 1k. The output of this driver is connected to the gate of the IRF4905 P-MOSFET.</p>
+<p>Connect everything as in the schematic above and upload the next code to your Arduino and start moving the potentiometer. Observe the output on the oscilloscope.</p>
+<p>This circuit is able to increase and decrease the voltage and keep that value steady for the same LOAD, in this case a 100 ohm resistor, as we can see in the picture below. But if we change the output load the discharge time of the output will change as well since for lower loads there will be a higher amount of current passing. So if the discharging time is faster or slower the duty cycle should change as well. For that we should add a feedback system to our circuit that would sense the output voltage and correct the PWM duty in order to keep the same desired value. In the next figure, you can find the real connection on the prototyping board with the connection to Arduino UNO.</p>
+<p><img alt="buck_converter_schematic" loading="lazy" decoding="async" fetchpriority="auto" width="792" height="528" src="/_astro/breadboard_image_buck_converter.vC3sJjJs_Z1wmDJx.webp" ></p>
+<h2 id="arduino-code-for-pwm-generation">Arduino Code for PWM Generation</h2>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="c"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">#include</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> &#x3C;Arduino.h></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">//Analog input pin for the potentiometer</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">int</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> potentiometer_pin </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> A0; </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// PWM output pin</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">int</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> pwm_pin </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> 3</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;          </span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">void</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> setup</span><span style="color:#24292E;--shiki-dark:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  // Adjusts the pin to input mode</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">  pinMode</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(potentiometer_pin, INPUT);</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  // Adjusts the pin to output mode</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">  pinMode</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(pwm_pin, OUTPUT);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  // Adjusts the PWM frequency to 980.39 Hz.</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  // By default arduino PWM frequency is 490.20 Hz, </span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  // but this value is not high enough to have a stable DC output voltage in low duty cycles.</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  TCCR2B </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> TCCR2B </span><span style="color:#D73A49;--shiki-dark:#F97583">&#x26;</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> B11111000 </span><span style="color:#D73A49;--shiki-dark:#F97583">|</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> B00000011;</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">void</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> loop</span><span style="color:#24292E;--shiki-dark:#E1E4E8">() {  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  // Reads the voltage of the potentiometer to a value between 0 to 1023</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  // The resolution of ADC on Arduino is 10 bits.</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">  int</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> duty_cycle </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> analogRead</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(potentiometer_pin);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  // Maps the value from [0 1023] to [0 255] for the PWM function of Arduino</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">  int</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> duty_cycle_mapped </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> map</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(duty_cycle, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">0</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">1024</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">0</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">254</span><span style="color:#24292E;--shiki-dark:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  // Sets the PWM signal duty cyle value, 0->0%, 254->100%</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">  analogWrite</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(pwm_pin, duty_cycle_mapped);</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
+<h2 id="important-notes">Important Notes</h2>
+<ul>
+<li>Make sure all of the components are connected correctly before connecting the battery.</li>
+<li>Take enough care to keep the battery contact wires not touching each other, otherwise it will be short circuit and the battery becomes hot and loses its energy.</li>
+<li>Don’t forget to program the Arduino with the code provided, otherwise you won’t see anything on the output.</li>
+<li>Try find the resistor values by their color code. They should be 1k resistors.</li>
+</ul>
+<h2 id="video-of-the-experiment-1">Video of the Experiment</h2>
+<p>You can watch the video of this experiment by following this link: <a href="https://www.youtube.com/watch?v=zWer2KIcYE4">Video on Youtube</a></p>  </div> <section class="comments" data-astro-cid-jvxsf75u> <h2 id="__comments" data-astro-cid-jvxsf75u>Comments</h2> <div class="giscus" data-astro-cid-jvxsf75u></div> </section> <script>(function(){const repo = "samiralavi/samiralavi.github.io";
+const repoId = "MDEwOlJlcG9zaXRvcnkxNzMzNTgyMjY=";
+const category = "Announcements";
+const categoryId = "DIC_kwDOClU8ks4CVJJR";
+
+  (function () {
+    const theme =
+      document.documentElement.getAttribute("data-theme") === "dark"
+        ? "dark"
+        : "light";
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute("data-repo", repo);
+    script.setAttribute("data-repo-id", repoId);
+    script.setAttribute("data-category", category);
+    script.setAttribute("data-category-id", categoryId);
+    script.setAttribute("data-mapping", "title");
+    script.setAttribute("data-strict", "0");
+    script.setAttribute("data-reactions-enabled", "1");
+    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-input-position", "bottom");
+    script.setAttribute("data-theme", theme);
+    script.setAttribute("data-lang", "en");
+    script.crossOrigin = "anonymous";
+    script.async = true;
+    document.querySelector(".giscus")?.appendChild(script);
+
+    // Sync Giscus theme with the site theme toggle
+    const toggle = document.getElementById("theme-toggle");
+    toggle?.addEventListener("click", () => {
+      const next =
+        document.documentElement.getAttribute("data-theme") === "dark"
+          ? "dark"
+          : "light";
+      const frame = document.querySelector(".giscus-frame");
+      if (frame) {
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme: next } } },
+          "https://giscus.app"
+        );
+      }
+    });
+  })();
+})();</script>  </article>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner" data-astro-cid-sz7xmlte> <div class="footer-social" data-astro-cid-sz7xmlte> <a href="https://github.com/samiralavi" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub" data-astro-cid-sz7xmlte> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"></path></svg> </a><a href="https://www.linkedin.com/in/seyed-amir-alavi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn" data-astro-cid-sz7xmlte> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"></path></svg> </a><a href="https://www.youtube.com/@Gear4Hackers" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube" data-astro-cid-sz7xmlte> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.8zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"></path></svg> </a><a href="https://x.com/samiralavi_real" target="_blank" rel="noopener noreferrer" aria-label="X" title="X" data-astro-cid-sz7xmlte> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.2-6.8-5.96 6.8H1.7l7.73-8.84L1.25 2.25h6.82l4.71 6.23 5.46-6.23zm-1.16 17.52h1.83L7.02 4.13H5.06l12.02 15.64z"></path></svg> </a> </div> <p class="footer-copy" data-astro-cid-sz7xmlte>
+&copy; 2019&ndash;2026 Amir Alavi.
+<a href="/privacy-policy" data-astro-cid-sz7xmlte>Privacy Policy</a> </p> </div> </footer>  </body></html> 
