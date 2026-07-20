@@ -1,0 +1,128 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout
+  title="Blog"
+  description="Articles about IoT, control systems, embedded software, and electronics by Amir Alavi."
+>
+  <header class="blog-head">
+    <h1>Blog</h1>
+    <p class="lead">
+      Articles about IoT, control systems, embedded software development, and
+      electronics.
+    </p>
+  </header>
+
+  <ul class="post-list">
+    {
+      posts.map((post) => (
+        <li>
+          <a href={`/blog/${post.id}`} class="post-card card">
+            <div class="post-card-body">
+              <h2>{post.data.title}</h2>
+              {post.data.description && <p>{post.data.description}</p>}
+              <div class="post-card-meta">
+                <FormattedDate date={post.data.pubDate} />
+                {post.data.tags.length > 0 && (
+                  <div class="tags">
+                    {post.data.tags.slice(0, 3).map((tag) => (
+                      <span class="tag">{tag}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+            <span class="post-card-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
+
+<style>
+  .blog-head {
+    margin-bottom: 2rem;
+  }
+  .blog-head h1 {
+    margin-bottom: 0.5rem;
+  }
+  .lead {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1rem;
+  }
+  .post-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s ease, border-color 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+  .post-card:hover {
+    text-decoration: none;
+    transform: translateY(-3px);
+    border-color: var(--accent);
+  }
+  .post-card-body {
+    flex: 1;
+  }
+  .post-card h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+    border: none;
+    padding: 0;
+    color: var(--heading);
+  }
+  .post-card p {
+    margin: 0 0 0.85rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+  .post-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .tag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+  .post-card-arrow {
+    font-size: 1.5rem;
+    color: var(--accent);
+    transition: transform 0.15s ease;
+  }
+  .post-card:hover .post-card-arrow {
+    transform: translateX(4px);
+  }
+</style>

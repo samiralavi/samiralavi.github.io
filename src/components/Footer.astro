@@ -1,0 +1,72 @@
+---
+import { SITE_TITLE, SOCIAL_LINKS } from "../consts";
+import SocialIcon from "./SocialIcon.astro";
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-social">
+      {
+        SOCIAL_LINKS.map((s) => (
+          <a
+            href={s.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={s.label}
+            title={s.label}
+          >
+            <SocialIcon icon={s.icon} />
+          </a>
+        ))
+      }
+    </div>
+    <p class="footer-copy">
+      &copy; 2019&ndash;{year} {SITE_TITLE}.
+      <a href="/privacy-policy">Privacy Policy</a>
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    flex-shrink: 0;
+    border-top: 1px solid var(--border);
+    background: var(--bg-soft);
+  }
+  .footer-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+  .footer-social {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .footer-social a {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-muted);
+    transition: color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  }
+  .footer-social a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .footer-copy {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+</style>

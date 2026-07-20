@@ -1,0 +1,65 @@
+---
+import { GISCUS } from "../consts";
+---
+
+<section class="comments">
+  <h2 id="__comments">Comments</h2>
+  <div class="giscus"></div>
+</section>
+
+<script
+  is:inline
+  define:vars={{
+    repo: GISCUS.repo,
+    repoId: GISCUS.repoId,
+    category: GISCUS.category,
+    categoryId: GISCUS.categoryId,
+  }}
+>
+  (function () {
+    const theme =
+      document.documentElement.getAttribute("data-theme") === "dark"
+        ? "dark"
+        : "light";
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute("data-repo", repo);
+    script.setAttribute("data-repo-id", repoId);
+    script.setAttribute("data-category", category);
+    script.setAttribute("data-category-id", categoryId);
+    script.setAttribute("data-mapping", "title");
+    script.setAttribute("data-strict", "0");
+    script.setAttribute("data-reactions-enabled", "1");
+    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-input-position", "bottom");
+    script.setAttribute("data-theme", theme);
+    script.setAttribute("data-lang", "en");
+    script.crossOrigin = "anonymous";
+    script.async = true;
+    document.querySelector(".giscus")?.appendChild(script);
+
+    // Sync Giscus theme with the site theme toggle
+    const toggle = document.getElementById("theme-toggle");
+    toggle?.addEventListener("click", () => {
+      const next =
+        document.documentElement.getAttribute("data-theme") === "dark"
+          ? "dark"
+          : "light";
+      const frame = document.querySelector(".giscus-frame");
+      if (frame) {
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme: next } } },
+          "https://giscus.app"
+        );
+      }
+    });
+  })();
+</script>
+
+<style>
+  .comments {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+</style>

@@ -1,0 +1,198 @@
+---
+import { SITE_TITLE, NAV_LINKS } from "../consts";
+import ThemeToggle from "./ThemeToggle.astro";
+
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isActive = (href: string) => {
+  const clean = href.replace(/\/$/, "") || "/";
+  if (clean === "/") return pathname === "/";
+  return pathname === clean || pathname.startsWith(clean + "/");
+};
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="brand">
+      <span class="brand-mark">AA</span>
+      <span class="brand-name">{SITE_TITLE}</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      {
+        NAV_LINKS.map((link) => (
+          <a
+            href={link.href}
+            class:list={["nav-link", { active: isActive(link.href) }]}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="header-actions">
+      <ThemeToggle />
+      <button
+        id="nav-toggle"
+        class="nav-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
+    {
+      NAV_LINKS.map((link) => (
+        <a
+          href={link.href}
+          class:list={["nav-link", { active: isActive(link.href) }]}
+        >
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 700;
+    color: var(--heading);
+    text-decoration: none;
+    margin-right: auto;
+  }
+  .brand:hover {
+    text-decoration: none;
+  }
+  .brand-mark {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 0.45rem 0.7rem;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+  .nav-link:hover {
+    color: var(--heading);
+    background: var(--bg-soft);
+    text-decoration: none;
+  }
+  .nav-link.active {
+    color: var(--accent);
+    background: var(--accent-soft);
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg-soft);
+    cursor: pointer;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    margin: 0 auto;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    padding: 0.5rem 1.25rem 1rem;
+    border-top: 1px solid var(--border);
+    gap: 0.15rem;
+  }
+  .mobile-nav.open {
+    display: flex;
+  }
+  .mobile-nav .nav-link {
+    padding: 0.65rem 0.7rem;
+  }
+
+  @media (max-width: 760px) {
+    .nav {
+      display: none;
+    }
+    .nav-toggle {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById("nav-toggle");
+  const menu = document.getElementById("mobile-nav");
+  toggle?.addEventListener("click", () => {
+    const open = menu?.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+</script>

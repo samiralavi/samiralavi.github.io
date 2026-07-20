@@ -1,0 +1,182 @@
+---
+import { SEO } from "astro-seo";
+import {
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  SITE_URL,
+  SITE_LOCALE,
+  AUTHOR,
+  GA_MEASUREMENT_ID,
+  ADSENSE_CLIENT,
+  ogImageForPath,
+} from "../consts";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+  publishDate?: Date;
+  updatedDate?: Date;
+  tags?: string[];
+}
+
+const {
+  title,
+  description = SITE_DESCRIPTION,
+  image,
+  type = "website",
+  publishDate,
+  updatedDate,
+  tags = [],
+} = Astro.props;
+
+const pageTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// Use the auto-generated social share card for this page unless one is passed in.
+const socialImage = new URL(
+  image ?? ogImageForPath(Astro.url.pathname),
+  Astro.site
+);
+
+// Structured data (JSON-LD)
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: AUTHOR,
+  url: SITE_URL,
+  image: socialImage.href,
+  jobTitle: "Embedded Systems Engineer",
+  sameAs: [
+    "https://github.com/samiralavi",
+    "https://www.linkedin.com/in/seyed-amir-alavi/",
+    "https://www.youtube.com/@Gear4Hackers",
+    "https://x.com/samiralavi_real",
+    "https://scholar.google.co.uk/citations?user=Irm9I_IAAAAJ&hl=en",
+  ],
+};
+
+const articleSchema =
+  type === "article" && publishDate
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: title,
+        description,
+        image: socialImage.href,
+        url: canonicalURL.href,
+        datePublished: publishDate.toISOString(),
+        dateModified: (updatedDate ?? publishDate).toISOString(),
+        author: { "@type": "Person", name: AUTHOR, url: SITE_URL },
+        keywords: tags.join(", "),
+        mainEntityOfPage: { "@type": "WebPage", "@id": canonicalURL.href },
+      }
+    : null;
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title={SITE_TITLE}
+  href={new URL("rss.xml", Astro.site)}
+/>
+<meta name="generator" content={Astro.generator} />
+
+<SEO
+  title={pageTitle}
+  description={description}
+  canonical={canonicalURL.href}
+  openGraph={{
+    basic: {
+      title: pageTitle,
+      type: type,
+      image: socialImage.href,
+      url: canonicalURL.href,
+    },
+    optional: {
+      description: description,
+      siteName: SITE_TITLE,
+      locale: SITE_LOCALE,
+    },
+    image: {
+      alt: title ?? SITE_TITLE,
+      width: 1200,
+      height: 630,
+    },
+    ...(type === "article" && publishDate
+      ? {
+          article: {
+            authors: [AUTHOR],
+            publishedTime: publishDate.toISOString(),
+            modifiedTime: (updatedDate ?? publishDate).toISOString(),
+            tags: tags,
+          },
+        }
+      : {}),
+  }}
+  twitter={{
+    card: "summary_large_image",
+    site: "@samiralavi_real",
+    creator: "@samiralavi_real",
+    title: pageTitle,
+    description: description,
+    image: socialImage.href,
+    imageAlt: title ?? SITE_TITLE,
+  }}
+  extend={{
+    meta: [{ name: "author", content: AUTHOR }],
+  }}
+/>
+
+<!-- Structured data (JSON-LD) -->
+<script
+  type="application/ld+json"
+  is:inline
+  set:html={JSON.stringify(personSchema)}
+/>
+{
+  articleSchema && (
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(articleSchema)}
+    />
+  )
+}
+
+<!-- Set theme before paint to avoid flash -->
+<script is:inline>
+  (function () {
+    const stored = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    const theme = stored || (prefersDark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+
+<!-- Google AdSense -->
+<script
+  async
+  src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+  crossorigin="anonymous"></script>
+
+<!-- Google Analytics -->
+<script
+  async
+  src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+></script>
+<script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", GA_MEASUREMENT_ID);
+</script>

@@ -1,0 +1,21 @@
+{
+  "name": "samiralavi.github.io",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Personal website of Amir Alavi, built with Astro.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.4.1",
+    "astro": "^5.13.0",
+    "astro-og-canvas": "^0.13.0",
+    "astro-seo": "^1.1.0",
+    "sharp": "^0.34.3"
+  }
+}
