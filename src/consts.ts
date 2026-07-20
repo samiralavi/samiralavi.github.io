@@ -54,7 +54,7 @@ export const SOCIAL_LINKS = [
   },
   {
     label: "YouTube",
-    href: "https://www.youtube.com/@Gear4Hackers",
+    href: "https://www.youtube.com/@amiralavi_real",
     icon: "youtube",
   },
   { label: "X", href: "https://x.com/samiralavi_real", icon: "x" },
