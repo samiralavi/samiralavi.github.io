@@ -13,9 +13,8 @@ export const COMPANY = {
   url: "https://linuscent.com",
 };
 
-// Google services
+// Google Analytics
 export const GA_MEASUREMENT_ID = "G-NL4RPWEYBQ";
-export const ADSENSE_CLIENT = "ca-pub-6763725768300978";
 
 // Giscus comments
 export const GISCUS = {

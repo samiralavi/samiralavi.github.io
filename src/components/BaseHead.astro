@@ -7,7 +7,6 @@ import {
   SITE_LOCALE,
   AUTHOR,
   GA_MEASUREMENT_ID,
-  ADSENSE_CLIENT,
   ogImageForPath,
 } from "../consts";
 import "../styles/global.css";
@@ -160,12 +159,6 @@ const articleSchema =
     document.documentElement.setAttribute("data-theme", theme);
   })();
 </script>
-
-<!-- Google AdSense -->
-<script
-  async
-  src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-  crossorigin="anonymous"></script>
 
 <!-- Google Analytics -->
 <script

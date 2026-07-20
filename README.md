@@ -22,7 +22,7 @@ npm run preview  # preview the production build locally
 ## Project structure
 
 ```
-public/                 Static assets (favicon, ads.txt, images used in HTML)
+public/                 Static assets (favicon, robots.txt, images used in HTML)
 src/
   assets/               Images optimized by Astro
   components/           Reusable UI components
