@@ -6,6 +6,9 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://samiralavi.github.io',
   integrations: [sitemap()],
+  redirects: {
+    '/blog/buck_coverter/buck_converter_arduino': '/blog/buck_coverter',
+  },
   markdown: {
     shikiConfig: {
       themes: {
